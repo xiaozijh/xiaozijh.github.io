@@ -94,17 +94,17 @@
 
 
 
-  <meta name="description" content="osal是任务和事件互相调度（抽象的系统）–利用osal的api接口函数在应用层调度 P1SEL &amp;amp;= ~(1 &amp;lt;&amp;lt; 2); //P12设置为IO口   P1DIR &amp;amp;= ~(1 &amp;lt;&amp;lt; 2); //P12设置为输入   P1INP &amp;amp;= ~(1 &amp;lt;&amp;lt; 2); //P1上拉下拉模式       P2INP &amp;amp;= ~(1 &amp;lt;&amp;l">
+  <meta name="description" content="osal是任务和事件互相调度（抽象的系统）–利用osal的api接口函数在应用层调度–osal:一个事件表对应各个任务ID,一个函数表保存任务事件函数地址">
 <meta property="og:type" content="article">
 <meta property="og:title" content="OSAL原理">
 <meta property="og:url" content="https://xiaozijh.github.io/2019/07/21/OSAL原理/index.html">
 <meta property="og:site_name" content="小子的个人博客">
-<meta property="og:description" content="osal是任务和事件互相调度（抽象的系统）–利用osal的api接口函数在应用层调度 P1SEL &amp;amp;= ~(1 &amp;lt;&amp;lt; 2); //P12设置为IO口   P1DIR &amp;amp;= ~(1 &amp;lt;&amp;lt; 2); //P12设置为输入   P1INP &amp;amp;= ~(1 &amp;lt;&amp;lt; 2); //P1上拉下拉模式       P2INP &amp;amp;= ~(1 &amp;lt;&amp;l">
+<meta property="og:description" content="osal是任务和事件互相调度（抽象的系统）–利用osal的api接口函数在应用层调度–osal:一个事件表对应各个任务ID,一个函数表保存任务事件函数地址">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-22T13:48:15.154Z">
+<meta property="og:updated_time" content="2019-07-24T14:09:47.998Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="OSAL原理">
-<meta name="twitter:description" content="osal是任务和事件互相调度（抽象的系统）–利用osal的api接口函数在应用层调度 P1SEL &amp;amp;= ~(1 &amp;lt;&amp;lt; 2); //P12设置为IO口   P1DIR &amp;amp;= ~(1 &amp;lt;&amp;lt; 2); //P12设置为输入   P1INP &amp;amp;= ~(1 &amp;lt;&amp;lt; 2); //P1上拉下拉模式       P2INP &amp;amp;= ~(1 &amp;lt;&amp;l">
+<meta name="twitter:description" content="osal是任务和事件互相调度（抽象的系统）–利用osal的api接口函数在应用层调度–osal:一个事件表对应各个任务ID,一个函数表保存任务事件函数地址">
 
 
 
@@ -343,7 +343,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-07-22 21:48:15" itemprop="dateModified" datetime="2019-07-22T21:48:15+08:00">2019-07-22</time>
+                <time title="Modified: 2019-07-24 22:09:47" itemprop="dateModified" datetime="2019-07-24T22:09:47+08:00">2019-07-24</time>
               </span>
             
           
@@ -400,17 +400,8 @@
       
 
       
-        <h2 id="osal是任务和事件互相调度（抽象的系统）"><a href="#osal是任务和事件互相调度（抽象的系统）" class="headerlink" title="osal是任务和事件互相调度（抽象的系统）"></a>osal是任务和事件互相调度（抽象的系统）</h2><p>–利用osal的api接口函数在应用层调度</p>
-<pre><code>P1SEL &amp;= ~(1 &lt;&lt; 2); //P12设置为IO口  
-P1DIR &amp;= ~(1 &lt;&lt; 2); //P12设置为输入  
-P1INP &amp;= ~(1 &lt;&lt; 2); //P1上拉下拉模式      
-P2INP &amp;= ~(1 &lt;&lt; 6); //P1上拉  
-P1_2 = 1;           //P12拉高  
+        <h2 id="osal是任务和事件互相调度（抽象的系统）"><a href="#osal是任务和事件互相调度（抽象的系统）" class="headerlink" title="osal是任务和事件互相调度（抽象的系统）"></a>osal是任务和事件互相调度（抽象的系统）</h2><p>–利用osal的api接口函数在应用层调度<br>–osal:<br>一个事件表对应各个任务ID,一个函数表保存任务事件函数地址</p>
 
-P1IFG &amp;= ~(1 &lt;&lt; 2); //初始化P12中断标志位  
-PICTL |= (1 &lt;&lt; 1);  //下降沿触发   
-P1IEN |= (1 &lt;&lt; 2);  //使能P12中断    
-IEN2 |= (1 &lt;&lt; 4);   //允许P1口中断;   </code></pre>
       
     </div>
 
@@ -521,7 +512,7 @@ IEN2 |= (1 &lt;&lt; 4);   //允许P1口中断;   </code></pre>
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
